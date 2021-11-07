@@ -1,21 +1,12 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const dotenv = require("dotenv")
 const express = require("express");
 const app = express(); 
-const port = 3000;
 
 dotenv.config({path:"./config.env"});
+require("./db/conn")
+const port = process.env.PORT
 
-
- //connect databse to mongoaatlas-------------------------------------------->>>>>>>>>>>>>>>>>>>>>>>>
-const DB =process.env.DATABASE;
-
-mongoose.connect(DB ,{useNewUrlParser:true,// useCreateIndex:true,// useUnifiedTopology:true,// useFindAndModify :false
-}).then(()=>{
-    console.log("connetion sucessfull")
-}).catch((err)=>{
-    console.log(err + "no connection");
-})
 
 
 
