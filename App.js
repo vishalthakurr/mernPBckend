@@ -7,6 +7,11 @@ dotenv.config({path:"./config.env"});
 require("./db/conn")
 
 // const userData = require("./model/userSchema")
+
+app.use(express.json()); 
+
+//we link the router file to make our  route easy
+app.use(require("./router/auth")) 
 const port = process.env.PORT
 
 
